@@ -1,6 +1,6 @@
 # Team Name SnapesOnAPlane
 - U of A Coding bootcamp Project 1 :metal:
-- *https://denzgrant.github.io/SnapesOnAPlane/*
+- *https://codydevloop.github.io/DineInDineOut-Group-Project/*
 - **Team Member: Denzell :see_no_evil:, Hoover :hear_no_evil:, and Michelle. :speak_no_evil:**
 
 ## User story :speech_balloon:
