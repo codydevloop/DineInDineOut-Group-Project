@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <title>Dine-In or Dine-Out</title>
+</head>
+
+<body>
+    <div id="recipes-modal" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 id="recipesModalTitle"class="uk-modal-title">Modal Title</h2>
+            </div>
+            <div class="uk-modal-body">
+               <ul>
+                   <li><a id="recipeModalLink">Check Out Recipe</a></li>
+                   <li id="recipeModalDiet"></li>
+                   <li id="recipeModalHealth"></li>
+                   <li><img id="recipeModalImage"></li>
+               </ul>
+            </div>
+
+        </div>
+    </div>
+    <div id="restaurant-modal" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 id="restaurantModalTitle"class="uk-modal-title">Modal Title</h2>
+            </div>
+            <div class="uk-modal-body">
+               <ul>
+                   <li><a id="restaurantModalLink">Full Restaurant Details</a></li>
+                   <li id="restaurantModalLocation"></li>
+                   <li id="restaurantModalRatingModalRating"></li>
+                   <li><img id="restaurantModalImage"></li>
+               </ul>
+            </div>
+
+        </div>
+    </div>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li class="uk-inline">
+                    <button class="uk-button uk-button-default uk-margin-small-right" type="button"
+                        uk-toggle="target: #snapeOnAPlane">Team Name</button>
+                    <div id="snapeOnAPlane" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body">
+                            <h2 class="uk-modal-title">Snapes on the A Plane</h2>
+                            <img
+                                src="https://66.media.tumblr.com/577b9ad83db029e2ef8b49aa6ffe0603/tumblr_p4napzYf3O1wkswzyo1_400.gifv">
+                </li>
+                <li class="uk-inline">
+                    <button class="uk-button uk-button-default uk-margin-small-right" type="button"
+                        uk-toggle="target: #aboutUs">About Us</button>
+                    <div id="aboutUs" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <p>Hi There! This is a simple site made by University of Arizona bootcamp students: Denzell, Hoover
+                                and Michelle. This is our first project. I hope you enjoy it.</p>
+                        </div>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+
+    </nav>
+    <div class="uk-container">
+        <Header data-aos="zoom-in">
+            <h1 class="uk-heading-medium uk-text-center uk-text-primary uk-margin-small-top">
+                Welcome to Dine-in or Dine-out</h1>
+        </Header>
+
+        <dl data-aos="fade-down" class="uk-description-list uk-description-list-divider uk-overlay">
+            <dt class="uk-text-primary uk-text-center "></dt>
+            <dd class="uk-text-center">Making a decision for what to eat is always hard. This is a simple website that
+                help
+                you decide what to eat today.
+                <div id="time" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                </div>
+            </dd>
+
+        </dl>
+        <hr class="uk-divider-icon">
+
+        <div>
+            <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover"
+                data-src="https://www.thespruceeats.com/thmb/LV4VRAPdilCLCQj7mi4m8PFxczI=/2164x1386/filters:fill(auto,1)/freshvegetablesAlexRaths-4c1ea186a88e4fd7b95283eee614600c.jpg"
+                uk-img>
+                <div id="searchSection"  >
+                    <div class="uk-inline">
+                        <label>
+                            <span class="uk-form-icon" uk-icon="icon:search"></span>
+                            <input id="foodInput" class="uk-input uk-form-width-medium" type="text"
+                                placeholder="Search Food">
+                        </label>
+                    </div>
+                    <div class="uk-inline">
+                        <label>
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: location"></span>
+                            <input id="zipcodeInput" class="uk-input uk-form-width-medium" type="text"
+                                placeholder="zip code">
+                        </label>
+                    </div>
+                    <input id="searchBtn" type="submit" class="uk-button uk-button-primary " value="Search">
+                </div>
+            </div>
+
+            <hr class="uk-divider-icon">
+
+            <div class="row">
+                <div class="uk-child-width-expand@s uk-grid-divider " uk-grid>
+
+                    <div>
+                        <h4 data-aos="flip-up">Recipes</h4>
+                        <div id="recipesDispaly" ></div>
+                       
+                        
+
+                    </div>
+                  
+                    <div >
+                        <h4 data-aos="flip-up">Restaurants</h4>
+                        <div id="restaurantDisplay"> </div>
+                        
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <footer class="uk-padding-small uk-sticky='bottom: true'">
+            <h6 class="uk-text-center">Made with lots of <span uk-icon="icon: heart"></span></h6>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="main.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+</body>
+
+</html>
